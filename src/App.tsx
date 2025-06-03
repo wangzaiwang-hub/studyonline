@@ -3,6 +3,7 @@ import Home from "@/pages/Home";
 import SequentialPage from "@/pages/SequentialPage";
 import RandomPage from "@/pages/RandomPage";
 import ReviewPage from "@/pages/ReviewPage";
+import WrongQuestionsPage from "@/pages/WrongQuestionsPage";
 import { createContext, useState } from "react";
 
 export const AuthContext = createContext({
@@ -27,6 +28,7 @@ export default function App() {
         <Route path="/sequential" element={<SequentialPage />} />
         <Route path="/random" element={<RandomPage />} />
         <Route path="/review" element={<ReviewPage />} />
+        <Route path="/wrong-questions" element={<WrongQuestionsPage />} />
       </Routes>
     </AuthContext.Provider>
   );

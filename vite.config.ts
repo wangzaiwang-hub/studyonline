@@ -13,4 +13,8 @@ function getPlugins() {
 
 export default defineConfig({
   plugins: getPlugins(),
+  publicDir: 'public',
+  resolve: {
+    extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json']
+  }
 });

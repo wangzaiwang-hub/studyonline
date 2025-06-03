@@ -1,47 +1,38 @@
+import React from 'react';
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-
-const modeButtons = [
-  {
-    title: "顺序刷题",
-    icon: "fa-solid fa-list-ol",
-    color: "bg-[#98FF98]",
-    path: "/sequential"
-  },
-  {
-    title: "随机刷题",
-    icon: "fa-solid fa-shuffle",
-    color: "bg-[#87CEEB]",
-    path: "/random"
-  },
-  {
-    title: "刷错题",
-    icon: "fa-solid fa-rotate-left",
-    color: "bg-[#FF7F50]",
-    path: "/review"
-  }
-];
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-[#FAF9F6] p-4">
-      <h1 className="text-2xl font-bold text-[#333333] mb-8">在线答题系统</h1>
-      <div className="w-full max-w-md space-y-4">
-        {modeButtons.map((button) => (
-          <motion.div
-            key={button.title}
-            whileTap={{ scale: 0.98 }}
-            transition={{ duration: 0.1 }}
+    <div className="min-h-screen bg-gray-100 flex flex-col justify-center items-center">
+      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+        <h1 className="text-3xl font-bold text-center mb-6">毛概刷题系统</h1>
+        <h2 className="text-2xl font-bold text-center mb-6">宝宝加油</h2>
+        <div className="space-y-4">
+          <Link 
+            to="/sequential" 
+            className="block w-full bg-blue-500 text-white py-3 text-center rounded-md hover:bg-blue-600 transition"
           >
+            顺序刷题
+          </Link>
+          <Link 
+            to="/random" 
+            className="block w-full bg-green-500 text-white py-3 text-center rounded-md hover:bg-green-600 transition"
+          >
+            随机刷题
+          </Link>
+          <Link 
+            to="/review" 
+            className="block w-full bg-yellow-500 text-white py-3 text-center rounded-md hover:bg-yellow-600 transition"
+          >
+            错题回顾
+          </Link>
             <Link
-              to={button.path}
-              className={`${button.color} flex flex-col items-center justify-center p-6 rounded-lg shadow-md text-white font-medium text-lg`}
+            to="/wrong-questions" 
+            className="block w-full bg-purple-500 text-white py-3 text-center rounded-md hover:bg-purple-600 transition"
             >
-              <i className={`${button.icon} text-2xl mb-2`}></i>
-              {button.title}
+            错题集
             </Link>
-          </motion.div>
-        ))}
+        </div>
       </div>
     </div>
   );
